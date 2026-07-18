@@ -1,10 +1,10 @@
 # The Governor's Inn - Website
 
-A single-page website for [The Governor's Inn](https://www.governorsinn.com/), a restaurant and hotel on the historic Spaulding estate at 78 Wakefield Street, Rochester, NH - home of Spaulding Steak & Ale, The Garage beer garden, twenty guest rooms, weddings & events, and live music five nights a week.
+A single-page website for [The Governor's Inn](https://www.governorsinn.com/), a restaurant and hotel on the historic Spaulding estate at 78 Wakefield Street, Rochester, NH, home of Spaulding Steak & Ale, The Garage beer garden, twenty guest rooms, weddings & events, and live music five nights a week.
 
 ## The site
 
-**`index.html`** is the production site. It's fully self-contained (one HTML file plus the `photos/` folder) - no build step, no framework. Deploy by uploading `index.html`, `photos/`, `Gov_1.jpg`, `Gov_2.png`, `robots.txt`, and `sitemap.xml` to any static host.
+**`index.html`** is the production site. It's fully self-contained (one HTML file plus the `photos/` folder), no build step, no framework. Deploy by uploading `index.html`, `photos/`, `Gov_1.jpg`, `Gov_2.png`, `robots.txt`, and `sitemap.xml` to any static host.
 
 ### Design
 
@@ -15,7 +15,7 @@ The design is built around the inn's real hanging sign, decomposed into an ident
 - The **full sign** appears once, in the Visit section, doing its real job: "look for the sign on Wakefield Street"
 - The striped **awning valances** over each photo echo the estate's real window awnings
 
-Typography: Fraunces (display) · Archivo (body) · Oswald (letterboard + sign). Palette: cream, hunter green, and burgundy - pulled from the sign and the building itself.
+Typography: Fraunces (display) · Archivo (body) · Oswald (letterboard + sign). Palette: cream, hunter green, and burgundy, pulled from the sign and the building itself.
 
 ### Key integrations
 
@@ -30,12 +30,12 @@ Typography: Fraunces (display) · Archivo (body) · Oswald (letterboard + sign).
 - JSON-LD structured data: `Hotel` (with `ReserveAction` → booking engine), `Restaurant` (with `hasMenu` → Toast), `BarOrPub`, and `FAQPage` matching the visible FAQ
 - Answer-first meta tags, canonical URL, Open Graph tags
 - `robots.txt` explicitly allows AI search crawlers (OAI-SearchBot, PerplexityBot, ClaudeBot, etc.)
-- `sitemap.xml` - submit to Google Search Console and Bing Webmaster Tools after deploy
+- `sitemap.xml`: submit to Google Search Console and Bing Webmaster Tools after deploy
 
 ## Maintenance
 
-- **The summer music lineup** in the Live Music section (`<ul class="lineup">`) is hard-coded - edit the rows as shows pass or get announced.
-- **The letterboard messages** are in the `MSGS` array in the inline script at the bottom of `index.html` - each message is two lines of max 20 characters.
+- **The summer music lineup** in the Live Music section (`<ul class="lineup">`) is hard-coded, edit the rows as shows pass or get announced.
+- **The letterboard messages** are in the `MSGS` array in the inline script at the bottom of `index.html`, each message is two lines of max 20 characters.
 - **Hours** appear in three places; keep them in sync: the visible facts lists, the FAQ, and the JSON-LD `openingHoursSpecification`.
 - **Copy style:** the site uses plain hyphens, never em dashes (—). All copy, meta tags, alt text, and JSON-LD were swept in July 2026; keep new copy consistent.
 
@@ -46,7 +46,7 @@ index.html        The production site
 photos/           Photography (sourced from the inn's original site)
 Design_1..4/      Design exploration comps (Design 4 became the site)
 robots.txt        Crawler rules incl. AI search bots
-sitemap.xml       Sitemap - submit after deploy
+sitemap.xml       Sitemap: submit after deploy
 Gov_1.jpg/2.png   Original estate photos
 ```
 
