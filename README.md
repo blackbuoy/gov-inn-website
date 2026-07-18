@@ -37,7 +37,7 @@ Typography: Fraunces (display) · Archivo (body) · Oswald (letterboard + sign).
 - **The summer music lineup** in the Live Music section (`<ul class="lineup">`) is hard-coded, edit the rows as shows pass or get announced.
 - **The letterboard messages** are in the `MSGS` array in the inline script at the bottom of `index.html`, each message is two lines of max 20 characters.
 - **Hours** appear in three places; keep them in sync: the visible facts lists, the FAQ, and the JSON-LD `openingHoursSpecification`.
-- **Copy style:** the site uses plain hyphens, never em dashes (—). All copy, meta tags, alt text, and JSON-LD were swept in July 2026; keep new copy consistent.
+- **Copy style:** the site uses plain hyphens, never em dashes (U+2014). All copy, meta tags, alt text, and JSON-LD were swept in July 2026; keep new copy consistent.
 
 ## Repository layout
 
