@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 510" width="360" height="510" role="img" aria-label="The Governor's Inn — Restaurant and Hotel sign logo">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..900;1,9..144,400..900&amp;family=Oswald:wght@400..600&amp;display=swap');
+    .sign{font-family:"Fraunces",Georgia,serif}
+    .board{font-family:"Oswald","Arial Narrow",sans-serif}
+  </style>
+  <!-- bracket arm -->
+  <rect x="14" y="0" width="332" height="9" rx="4" fill="#1f352c"/>
+  <circle cx="26" cy="4.5" r="7" fill="#1f352c"/>
+  <circle cx="334" cy="4.5" r="7" fill="#1f352c"/>
+  <!-- chains -->
+  <line x1="104" y1="7" x2="112" y2="58" stroke="#3a3129" stroke-width="4" stroke-linecap="round"/>
+  <line x1="256" y1="7" x2="248" y2="58" stroke="#3a3129" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="104" cy="10" r="5" fill="none" stroke="#3a3129" stroke-width="3"/>
+  <circle cx="256" cy="10" r="5" fill="none" stroke="#3a3129" stroke-width="3"/>
+  <!-- panel -->
+  <rect x="28" y="56" width="304" height="392" rx="16" fill="#6b2a33"/>
+  <rect x="40" y="68" width="280" height="368" rx="9" fill="#f2e8d2"/>
+  <rect x="47" y="75" width="266" height="354" rx="6" fill="none" stroke="#6b2a33" stroke-width="1.6" opacity=".55"/>
+  <!-- lettering -->
+  <text class="sign" x="180" y="130" text-anchor="middle" font-style="italic" font-weight="600" font-size="34" fill="#2f2723">The</text>
+  <text class="sign" x="180" y="188" text-anchor="middle" font-weight="900" font-size="44" letter-spacing="-.5" fill="#2f2723">Governor&#8217;s</text>
+  <text class="sign" x="180" y="243" text-anchor="middle" font-weight="900" font-size="44" fill="#2f2723">Inn</text>
+  <!-- red banner -->
+  <rect x="62" y="266" width="236" height="70" rx="4" fill="#a03a35"/>
+  <rect x="67" y="271" width="226" height="60" rx="3" fill="none" stroke="#f2e8d2" stroke-width="1.6" opacity=".7"/>
+  <text class="board" x="180" y="297" text-anchor="middle" font-weight="600" font-size="23" letter-spacing="3.5" fill="#f2e8d2">RESTAURANT</text>
+  <text class="board" x="180" y="325" text-anchor="middle" font-weight="600" font-size="23" letter-spacing="8" fill="#f2e8d2">HOTEL</text>
+  <!-- letterboard -->
+  <rect x="62" y="350" width="236" height="64" rx="4" fill="#fbf6ea" stroke="#6b2a33" stroke-width="1.4"/>
+  <line x1="66" y1="371" x2="294" y2="371" stroke="#6b2a33" stroke-width=".8" opacity=".28"/>
+  <line x1="66" y1="392" x2="294" y2="392" stroke="#6b2a33" stroke-width=".8" opacity=".28"/>
+  <text class="board" x="180" y="368" text-anchor="middle" font-weight="500" font-size="15" letter-spacing="3" fill="#2f2723">SERVING DINNER</text>
+  <text class="board" x="180" y="389" text-anchor="middle" font-weight="500" font-size="15" letter-spacing="3" fill="#2f2723">TUES TO SUN</text>
+  <text class="board" x="180" y="409" text-anchor="middle" font-weight="500" font-size="14" letter-spacing="2.5" fill="#a03a35">CALL 332-0107</text>
+  <!-- hanging town plaque -->
+  <line x1="130" y1="448" x2="130" y2="462" stroke="#3a3129" stroke-width="3"/>
+  <line x1="230" y1="448" x2="230" y2="462" stroke="#3a3129" stroke-width="3"/>
+  <rect x="98" y="462" width="164" height="34" rx="6" fill="#6b2a33"/>
+  <text class="board" x="180" y="484" text-anchor="middle" font-weight="500" font-size="14" letter-spacing="3" fill="#f2e8d2">ROCHESTER · N.H.</text>
+  <!-- ivy curling onto the sign -->
+  <g opacity=".95">
+    <path d="M332 100 C 320 130 334 160 322 190" fill="none" stroke="#4c6e3d" stroke-width="2.4"/>
+    <path d="M326 132 C 320 118 332 108 340 116 C 348 108 358 118 350 128 C 356 138 344 146 338 138 C 332 146 322 142 326 132 Z" fill="#6e9455"/>
+    <path d="M318 196 C 312 182 324 172 332 180 C 340 172 350 182 342 192 C 348 202 336 210 330 202 C 324 210 314 206 318 196 Z" fill="#4c6e3d"/>
+  </g>
+</svg>

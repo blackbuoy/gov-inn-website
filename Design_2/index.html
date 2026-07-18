@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Governor's Inn — Restaurant &amp; Hotel · Rochester, NH</title>
+<meta name="description" content="The Governor's Inn is a restaurant and hotel on the historic Spaulding estate in Rochester, NH. Dinner Tue–Sat, Sunday brunch, live music every week, twenty rooms upstairs. (603) 332-0107.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,900;1,9..144,400;1,9..144,600;1,9..144,900&family=Lora:ital,wght@0,400;0,500;1,400&family=Oswald:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --green:#24382E;
+    --green-deep:#182720;
+    --cream:#F6F0E1;
+    --cream-deep:#EFE6D0;
+    --brick:#6B2A33;
+    --banner:#A03A35;
+    --ink:#26211B;
+    --mut:#6C6354;
+    --line:rgba(36,56,46,.16);
+    --serif:"Fraunces",Georgia,serif;
+    --body:"Lora",Georgia,serif;
+    --cond:"Oswald","Arial Narrow",sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--cream);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.7;overflow-x:hidden}
+  img{max-width:100%;display:block}
+  a{color:var(--brick);text-decoration:none}
+  a:focus-visible,button:focus-visible{outline:2px solid var(--banner);outline-offset:3px}
+  ::selection{background:var(--green);color:var(--cream)}
+  h1,h2,h3{font-family:var(--serif);color:var(--green-deep);line-height:1.12}
+
+  .eyebrow{font-family:var(--cond);font-weight:500;font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--banner)}
+  .btn{display:inline-block;font-family:var(--cond);font-weight:500;font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;padding:.9rem 1.8rem;background:var(--green);color:var(--cream);border:1px solid var(--green);transition:.25s}
+  .btn:hover{background:var(--green-deep);border-color:var(--green-deep)}
+  .btn.line{background:transparent;color:var(--green)}
+  .btn.line:hover{background:var(--green);color:var(--cream)}
+  .btn.brick{background:var(--brick);border-color:var(--brick)}
+  .btn.brick:hover{background:#542128;border-color:#542128}
+
+  /* awning valance — striped scalloped edge, from the real awnings */
+  .valance{height:26px;background:repeating-linear-gradient(90deg,var(--green) 0 22px,var(--cream) 22px 44px);
+    -webkit-mask:linear-gradient(#000,#000) 0 0/100% calc(100% - 11px) no-repeat,
+      radial-gradient(circle 11px at 11px 0,#000 98%,transparent) 0 calc(100% - 11px)/22px 11px repeat-x;
+    mask:linear-gradient(#000,#000) 0 0/100% calc(100% - 11px) no-repeat,
+      radial-gradient(circle 11px at 11px 0,#000 98%,transparent) 0 calc(100% - 11px)/22px 11px repeat-x}
+
+  /* ---------- top bar + nav ---------- */
+  .topline{background:var(--green-deep);color:var(--cream);font-family:var(--cond);font-weight:400;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;text-align:center;padding:.55rem 1rem}
+  .topline a{color:var(--cream);border-bottom:1px solid rgba(246,240,225,.4)}
+  header{background:var(--green);color:var(--cream)}
+  .nav-in{max-width:1200px;margin:0 auto;padding:1.15rem 2rem;display:flex;justify-content:space-between;align-items:center;gap:1.5rem}
+  .word{font-family:var(--serif);font-weight:600;font-size:1.25rem;color:var(--cream);letter-spacing:.02em}
+  nav{display:flex;gap:1.8rem;align-items:center;font-family:var(--cond);font-weight:400;font-size:.76rem;letter-spacing:.2em;text-transform:uppercase}
+  nav a{color:var(--cream);opacity:.85;transition:.2s}
+  nav a:hover{opacity:1}
+  nav .book{border:1px solid rgba(246,240,225,.55);padding:.55rem 1.1rem;opacity:1}
+  nav .book:hover{background:var(--cream);color:var(--green)}
+  @media(max-width:860px){nav .hm{display:none}}
+
+  /* ---------- hero ---------- */
+  .hero{background:var(--cream);border-bottom:1px solid var(--line)}
+  .hero-in{max-width:1200px;margin:0 auto;padding:0 2rem;display:grid;grid-template-columns:1.15fr .85fr;gap:3rem;align-items:center}
+  .hero-copy{padding:5rem 0}
+  .hero h1{font-size:clamp(2.6rem,5.2vw,4.2rem);font-weight:900;margin:.9rem 0 1.2rem;text-wrap:balance}
+  .hero h1 em{font-style:italic;font-weight:600;color:var(--brick)}
+  .hero p.lede{color:var(--mut);font-size:1.1rem;max-width:52ch;margin-bottom:2rem}
+  .hero .row{display:flex;gap:.9rem;flex-wrap:wrap}
+  /* the sign hangs straight from the green header bar */
+  .hero-sign{align-self:start;display:flex;justify-content:center}
+  .hero-sign svg{width:min(300px,74vw);height:auto;filter:drop-shadow(0 20px 26px rgba(24,39,32,.25))}
+  @keyframes swing{from{transform:rotate(-1.2deg)}to{transform:rotate(1.2deg)}}
+  .swing{transform-origin:180px 10px;animation:swing 6s ease-in-out infinite alternate}
+  @media(prefers-reduced-motion:reduce){.swing{animation:none}html{scroll-behavior:auto}}
+
+  /* ---------- photo band ---------- */
+  .band{position:relative}
+  .band img{width:100%;height:min(62vh,560px);object-fit:cover;object-position:center 58%}
+  .band .valance{position:absolute;top:0;left:0;right:0;z-index:2}
+
+  /* ---------- sections ---------- */
+  section.blk{padding:5.5rem 2rem}
+  .blk-in{max-width:1200px;margin:0 auto}
+  .center{max-width:640px;margin:0 auto 3.2rem;text-align:center}
+  .center .eyebrow{display:block;margin-bottom:1rem}
+  .center h2{font-size:clamp(2rem,3.6vw,2.8rem);font-weight:900;margin-bottom:.9rem;text-wrap:balance}
+  .center p{color:var(--mut)}
+  .rule{width:64px;height:3px;background:var(--banner);margin:1.4rem auto 0}
+
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+  .split .photo{border:10px solid #fff;outline:1px solid var(--line);box-shadow:0 18px 40px rgba(24,39,32,.14)}
+  .split .photo img{width:100%;height:100%;object-fit:cover}
+  .split h2{font-size:clamp(1.9rem,3.2vw,2.5rem);font-weight:900;margin:.9rem 0 1rem}
+  .split p{color:var(--mut);margin-bottom:1rem}
+  .checks{list-style:none;columns:2;gap:2rem;margin:1.4rem 0 1.8rem;font-size:.95rem}
+  .checks li{padding:.3rem 0;break-inside:avoid}
+  .checks li::before{content:"—";color:var(--banner);margin-right:.6rem}
+
+  /* dine cards */
+  .duo{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+  .house{background:#FCF9F0;border:1px solid var(--line);position:relative;padding:0 2.2rem 2.2rem;text-align:center}
+  .house .valance{margin:0 -2.2rem 2rem;height:22px}
+  .house.g .valance{background:repeating-linear-gradient(90deg,var(--brick) 0 22px,var(--cream) 22px 44px)}
+  .house h3{font-size:1.7rem;font-weight:900;margin-bottom:.35rem}
+  .house .tag{font-family:var(--cond);font-weight:400;font-size:.72rem;letter-spacing:.26em;text-transform:uppercase;color:var(--banner);margin-bottom:1.1rem}
+  .house p{color:var(--mut);font-size:.96rem;max-width:44ch;margin:0 auto 1.4rem}
+  .hours{border-top:1px solid var(--line);margin-bottom:1.6rem;font-size:.92rem;text-align:left}
+  .hours div{display:flex;justify-content:space-between;gap:1.5rem;padding:.7rem 0;border-bottom:1px solid var(--line)}
+  .hours b{font-family:var(--cond);font-weight:500;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--green);padding-top:.2rem}
+  .hours span{color:var(--mut)}
+
+  /* events */
+  .alt{background:var(--cream-deep);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .venues{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem;max-width:1000px;margin:0 auto}
+  .venue{background:var(--cream);border:1px solid var(--line);padding:2rem 1.6rem;text-align:center}
+  .venue .n{font-family:var(--serif);font-style:italic;font-weight:600;font-size:1.05rem;color:var(--banner);display:block;margin-bottom:.5rem}
+  .venue h3{font-size:1.3rem;font-weight:900;margin-bottom:.5rem}
+  .venue p{font-size:.92rem;color:var(--mut)}
+  .events-foot{text-align:center;margin-top:2.6rem}
+
+  /* music */
+  .week{max-width:760px;margin:0 auto;border-top:1px solid var(--line)}
+  .week li{list-style:none;display:grid;grid-template-columns:10rem 1fr auto;gap:1.5rem;align-items:baseline;padding:1.1rem 0;border-bottom:1px solid var(--line)}
+  .week .day{font-family:var(--cond);font-weight:600;font-size:.78rem;letter-spacing:.26em;text-transform:uppercase;color:var(--green)}
+  .week .what{font-family:var(--serif);font-weight:600;font-size:1.15rem;color:var(--ink)}
+  .week .when{font-family:var(--cond);font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--mut);text-align:right}
+
+  /* ---------- visit + footer ---------- */
+  .visit{background:var(--green);color:var(--cream);text-align:center;padding:5.5rem 2rem}
+  .visit .eyebrow{color:#B9CDA9;display:block;margin-bottom:1rem}
+  .visit h2{color:var(--cream);font-size:clamp(2rem,3.4vw,2.7rem);font-weight:900;margin-bottom:1rem}
+  .visit p{color:rgba(246,240,225,.8);max-width:52ch;margin:0 auto 1.6rem}
+  .visit .tel{display:inline-block;font-family:var(--serif);font-style:italic;font-size:1.6rem;color:var(--cream);border-bottom:1px solid rgba(246,240,225,.5);margin-bottom:2rem}
+  .visit .meta{font-family:var(--cond);font-size:.74rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(246,240,225,.65);line-height:2.1}
+  footer{background:var(--green-deep);color:rgba(246,240,225,.55);text-align:center;padding:1.6rem 2rem;font-family:var(--cond);font-size:.66rem;letter-spacing:.24em;text-transform:uppercase}
+
+  /* ---------- responsive ---------- */
+  @media(max-width:920px){
+    .hero-in{grid-template-columns:1fr}
+    .hero-copy{padding:3.2rem 0 1rem;text-align:center;order:2}
+    .hero p.lede{margin:0 auto 2rem}
+    .hero .row{justify-content:center}
+    .hero-sign{order:1}
+    .hero-sign svg{width:min(230px,62vw)}
+    .hero-copy{padding-bottom:3.5rem}
+    .split,.duo{grid-template-columns:1fr;gap:2.4rem}
+    .venues{grid-template-columns:1fr}
+    section.blk{padding:4rem 1.4rem}
+    .week li{grid-template-columns:1fr;gap:.15rem}
+    .week .when{text-align:left}
+    .checks{columns:1}
+  }
+</style>
+</head>
+<body>
+
+<p class="topline">Serving dinner Tue – Sat · Sunday brunch 8 – 2 · <a href="tel:16033320107">(603) 332-0107</a></p>
+
+<header>
+  <div class="nav-in">
+    <a class="word" href="#top">The Governor&#8217;s Inn</a>
+    <nav>
+      <a class="hm" href="#stay">Stay</a>
+      <a class="hm" href="#dine">Dine</a>
+      <a class="hm" href="#events">Weddings &amp; Events</a>
+      <a class="hm" href="#music">Live Music</a>
+      <a class="book" href="tel:16033320107">Book a Room</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- hero: the sign hangs from the header bar -->
+<section class="hero">
+  <div class="hero-in">
+    <div class="hero-copy">
+      <span class="eyebrow">The Historic Spaulding Estate · Rochester, N.H.</span>
+      <h1>A restaurant &amp; hotel <em>in the old estate</em></h1>
+      <p class="lede">Hand-cut steaks in the original dining rooms, a beer garden out back, twenty guest rooms upstairs, and live music every week of the year.</p>
+      <div class="row">
+        <a class="btn" href="#dine">Menus &amp; Hours</a>
+        <a class="btn line" href="#stay">Stay the Night</a>
+      </div>
+    </div>
+    <div class="hero-sign">
+      <svg viewBox="0 0 360 510" role="img" aria-label="The Governor's Inn — Restaurant and Hotel hanging sign">
+        <rect x="14" y="0" width="332" height="9" rx="4" fill="#182720"/>
+        <circle cx="26" cy="4.5" r="7" fill="#182720"/>
+        <circle cx="334" cy="4.5" r="7" fill="#182720"/>
+        <g class="swing">
+          <line x1="104" y1="7" x2="112" y2="58" stroke="#3a3129" stroke-width="4" stroke-linecap="round"/>
+          <line x1="256" y1="7" x2="248" y2="58" stroke="#3a3129" stroke-width="4" stroke-linecap="round"/>
+          <circle cx="104" cy="10" r="5" fill="none" stroke="#3a3129" stroke-width="3"/>
+          <circle cx="256" cy="10" r="5" fill="none" stroke="#3a3129" stroke-width="3"/>
+          <rect x="28" y="56" width="304" height="392" rx="16" fill="#6b2a33"/>
+          <rect x="40" y="68" width="280" height="368" rx="9" fill="#f2e8d2"/>
+          <rect x="47" y="75" width="266" height="354" rx="6" fill="none" stroke="#6b2a33" stroke-width="1.6" opacity=".55"/>
+          <text x="180" y="130" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-style="italic" font-weight="600" font-size="34" fill="#2f2723">The</text>
+          <text x="180" y="188" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-weight="900" font-size="44" letter-spacing="-.5" fill="#2f2723">Governor&#8217;s</text>
+          <text x="180" y="243" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-weight="900" font-size="44" fill="#2f2723">Inn</text>
+          <rect x="62" y="266" width="236" height="70" rx="4" fill="#a03a35"/>
+          <rect x="67" y="271" width="226" height="60" rx="3" fill="none" stroke="#f2e8d2" stroke-width="1.6" opacity=".7"/>
+          <text x="180" y="297" text-anchor="middle" font-family="Oswald, Arial Narrow, sans-serif" font-weight="600" font-size="23" letter-spacing="3.5" fill="#f2e8d2">RESTAURANT</text>
+          <text x="180" y="325" text-anchor="middle" font-family="Oswald, Arial Narrow, sans-serif" font-weight="600" font-size="23" letter-spacing="8" fill="#f2e8d2">HOTEL</text>
+          <rect x="62" y="350" width="236" height="64" rx="4" fill="#fbf6ea" stroke="#6b2a33" stroke-width="1.4"/>
+          <line x1="66" y1="371" x2="294" y2="371" stroke="#6b2a33" stroke-width=".8" opacity=".28"/>
+          <line x1="66" y1="392" x2="294" y2="392" stroke="#6b2a33" stroke-width=".8" opacity=".28"/>
+          <text x="180" y="368" text-anchor="middle" font-family="Oswald, Arial Narrow, sans-serif" font-weight="500" font-size="15" letter-spacing="3" fill="#2f2723">SERVING DINNER</text>
+          <text x="180" y="389" text-anchor="middle" font-family="Oswald, Arial Narrow, sans-serif" font-weight="500" font-size="15" letter-spacing="3" fill="#2f2723">TUES TO SUN</text>
+          <text x="180" y="409" text-anchor="middle" font-family="Oswald, Arial Narrow, sans-serif" font-weight="500" font-size="14" letter-spacing="2.5" fill="#a03a35">CALL 332-0107</text>
+          <line x1="130" y1="448" x2="130" y2="462" stroke="#3a3129" stroke-width="3"/>
+          <line x1="230" y1="448" x2="230" y2="462" stroke="#3a3129" stroke-width="3"/>
+          <rect x="98" y="462" width="164" height="34" rx="6" fill="#6b2a33"/>
+          <text x="180" y="484" text-anchor="middle" font-family="Oswald, Arial Narrow, sans-serif" font-weight="500" font-size="14" letter-spacing="3" fill="#f2e8d2">ROCHESTER · N.H.</text>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- full-width photo with awning valance -->
+<div class="band">
+  <div class="valance" aria-hidden="true"></div>
+  <img src="../Gov_2.png" alt="The Governor's Inn estate from the lawn — brick manor, striped awnings, and garden seating behind the picket fence" loading="lazy" decoding="async">
+</div>
+
+<!-- STAY -->
+<section class="blk" id="stay">
+  <div class="blk-in split">
+    <div class="photo">
+      <img src="../Gov_1.jpg" loading="lazy" decoding="async" alt="The front entrance of The Governor's Inn — green shutters, striped awnings, and ivy on the brick">
+    </div>
+    <div>
+      <span class="eyebrow">Stay the Night</span>
+      <h2>Twenty rooms, a century of character</h2>
+      <p>Every guest room is one of a kind — original to the estate, with a private bath and a continental-plus breakfast included with your stay.</p>
+      <ul class="checks">
+        <li>Private bath in every room</li>
+        <li>Breakfast included</li>
+        <li>Air conditioning</li>
+        <li>Wi-Fi throughout</li>
+        <li>Cable television</li>
+        <li>Walkable downtown</li>
+      </ul>
+      <a class="btn" href="tel:16033320107">Check Availability</a>
+    </div>
+  </div>
+</section>
+
+<!-- DINE -->
+<section class="blk" id="dine" style="padding-top:2rem">
+  <div class="blk-in">
+    <div class="center">
+      <span class="eyebrow">Dine</span>
+      <h2>The dining rooms &amp; the beer garden</h2>
+      <p>Two ways to eat and drink at the inn — white-tablecloth steaks inside, cold pints and live bands out back.</p>
+      <div class="rule" aria-hidden="true"></div>
+    </div>
+    <div class="duo">
+      <article class="house">
+        <div class="valance" aria-hidden="true"></div>
+        <h3>Spaulding Steak &amp; Ale</h3>
+        <p class="tag">In the estate's original rooms</p>
+        <p>Hand-cut steaks, daily and weekly specials, and a proper happy hour.</p>
+        <div class="hours">
+          <div><b>Tue – Sat</b><span>Dinner from 4 PM · Happy hour</span></div>
+          <div><b>Sunday</b><span>Brunch 8 AM – 2 PM</span></div>
+          <div><b>Takeout</b><span>Order ahead on the Toast app</span></div>
+        </div>
+        <a class="btn" href="tel:16033320107">View Menu</a>
+      </article>
+      <article class="house g">
+        <div class="valance" aria-hidden="true"></div>
+        <h3>The Garage</h3>
+        <p class="tag">Beer garden · May – October</p>
+        <p>Our seasonal hangout — drinks on the patio, bands on the weekend, and a billiards room off the bar.</p>
+        <div class="hours">
+          <div><b>Season</b><span>Open May through October</span></div>
+          <div><b>Fri &amp; Sat</b><span>Live bands 7 – 10 PM</span></div>
+          <div><b>Billiards</b><span>Fri &amp; Sat, 6 – 10 PM</span></div>
+        </div>
+        <a class="btn brick" href="#music">See the Lineup</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- EVENTS -->
+<section class="blk alt" id="events">
+  <div class="blk-in">
+    <div class="center">
+      <span class="eyebrow">Weddings &amp; Events</span>
+      <h2>Three places to celebrate</h2>
+      <p>Weddings, showers, anniversaries, celebrations of life, and business gatherings — hosted on the estate year-round.</p>
+      <div class="rule" aria-hidden="true"></div>
+    </div>
+    <div class="venues">
+      <div class="venue">
+        <span class="n">Open air</span>
+        <h3>The Gardens &amp; Gazebo</h3>
+        <p>Ceremonies on the lawn, framed by ivy-covered brick.</p>
+      </div>
+      <div class="venue">
+        <span class="n">Under canvas</span>
+        <h3>The Tented Courtyard</h3>
+        <p>Dinner and dancing outdoors, with the ease of cover.</p>
+      </div>
+      <div class="venue">
+        <span class="n">Any season</span>
+        <h3>The Ballroom</h3>
+        <p>A classic indoor setting for receptions and banquets.</p>
+      </div>
+    </div>
+    <div class="events-foot">
+      <a class="btn" href="tel:16033320107">Speak with the Events Team</a>
+    </div>
+  </div>
+</section>
+
+<!-- MUSIC -->
+<section class="blk" id="music">
+  <div class="blk-in">
+    <div class="center">
+      <span class="eyebrow">Live at the Inn</span>
+      <h2>Music every week of the year</h2>
+      <p>Five nights a week, always free.</p>
+      <div class="rule" aria-hidden="true"></div>
+    </div>
+    <ul class="week">
+      <li><span class="day">Tuesday</span><span class="what">Trivia Night</span><span class="when">The Great Hall</span></li>
+      <li><span class="day">Wednesday</span><span class="what">Acoustic Night</span><span class="when">6 – 9 PM · Year-round</span></li>
+      <li><span class="day">Thursday</span><span class="what">Local Artists</span><span class="when">6 – 9 PM</span></li>
+      <li><span class="day">Friday</span><span class="what">Live Bands · The Garage</span><span class="when">7 – 10 PM · May – Oct</span></li>
+      <li><span class="day">Saturday</span><span class="what">Live Bands · The Garage</span><span class="when">7 – 10 PM · May – Oct</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- VISIT -->
+<section class="visit" id="visit">
+  <span class="eyebrow">Visit</span>
+  <h2>Look for the sign on Wakefield Street</h2>
+  <p>78 Wakefield Street, Rochester, NH 03867 — the historic Spaulding estate, marked by the hanging Restaurant &amp; Hotel sign out front.</p>
+  <a class="tel" href="tel:16033320107">(603) 332-0107</a>
+  <p class="meta">Dinner Tue – Sat from 4 PM · Sunday brunch 8 – 2<br>Front desk — call ahead for check-in</p>
+</section>
+
+</main>
+
+<footer>© 2026 The Governor's Inn · Rochester, New Hampshire</footer>
+
+</body>
+</html>

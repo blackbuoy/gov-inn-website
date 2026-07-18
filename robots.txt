@@ -1,0 +1,27 @@
+# The Governor's Inn — robots.txt
+# AI search crawlers explicitly allowed (per AI search optimization checklist).
+# Note: GPTBot and Google-Extended are TRAINING bots — allowed here by default;
+# flip to Disallow if the owner opts out of AI training use.
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: *
+Allow: /
+
+Sitemap: https://www.governorsinn.com/sitemap.xml
