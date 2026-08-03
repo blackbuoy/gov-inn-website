@@ -48,17 +48,20 @@ Every booking/order CTA points directly at these; no intermediate pages. The Goo
 
 ### Fonts
 
-Self-hosted variable-font latin subsets in `fonts/` (Fraunces roman + italic, Archivo, Oswald), subset to ASCII plus ’ ‘ “ ” – · © ®. If new copy ever needs glyphs outside that set (accented names, for example), regenerate the subsets or the glyphs will render in the metric-matched fallback. The `@font-face` fallbacks (Georgia / Arial / Arial Narrow) carry fontaine-style `size-adjust` overrides so the swap causes no layout shift.
+Self-hosted variable-font latin subsets in `fonts/` (Fraunces roman + italic, Archivo, Oswald), subset to ASCII plus ’ ‘ “ ” – · © ®. If new copy ever needs glyphs outside that set (accented names, for example), regenerate the subsets or the glyphs will render in the metric-matched fallback. The `@font-face` fallbacks (Georgia / Arial / Arial Narrow) carry fontaine-style `size-adjust` overrides so the swap causes no layout shift. Since the August 2026 redesign the four faces declare `font-display:optional` and are preloaded with `link rel="preload"` in the head: the first paint is already final, so nothing swaps and CLS stays 0. On a slow first visit the metric-matched fallbacks may serve for that view and the webfonts appear from the next view. A pin block in the inline script holds first-paint heights on the display copy as a safety net if a swap is ever reintroduced.
 
 ### Performance
 
-Lighthouse (gzip-enabled server, `--form-factor=mobile --throttling.cpuSlowdownMultiplier=10`): mobile 97/100/100/100 (TBT 0 ms, CLS 0.006; the residual points are the simulated-network floor on FCP/LCP), desktop 100/100/100/100, Agentic Browsing 100 on both. Inline CSS is minified; images are lazy-loaded WebP with explicit dimensions; the hero is `fetchpriority=high` and sized to be the LCP element.
+Lighthouse (gzip-enabled server, `--form-factor=mobile --throttling.cpuSlowdownMultiplier=10`): mobile 97/100/100/100 (TBT 0 ms, CLS 0.006; the residual points are the simulated-network floor on FCP/LCP), desktop 100/100/100/100, Agentic Browsing 100 on both. Inline CSS is minified; images are lazy-loaded WebP with explicit dimensions; the hero is `fetchpriority=high` and sized to be the LCP element. The August 2026 redesign re-verified the floors on an identical non-gzip local harness against the previous build: performance 95 to 97 mobile and 100 to 100 desktop, CLS 0.006/0.023 to 0/0, FCP 2.0 s to 1.0 s mobile from the font preloads; accessibility, best practices, and SEO stay 100 on both form factors.
 
 ## Maintenance
 
 - **The music lineup** (`<ul class="lineup">`): add rows with `data-date="YYYY-MM-DD"`; past dates hide themselves. Update the "booked through ..." line when extending.
 - **The letterboard messages** are in the `MSGS` array in the inline script, two lines of max 20 characters each.
 - **Hours** live in FOUR places; keep them in sync: the visible facts lists, the FAQ, the JSON-LD `openingHoursSpecification`, and the `HOURS`-style logic in the open-now script.
+- **The estate passage** (`.est-mirror`) mirrors the Hotel `description` in the JSON-LD word for word; edit the two together.
+- **Next on the stage** (`.next-up`) fills itself from the first unhidden lineup row and hides with the lineup when the season passes; no manual upkeep.
+- **Headline pins**: the inline script sets `min-height` on `.opening h1, section h2, .opening .lede, .est-mirror, .est-coda` at first paint. Add any new display-level copy to that selector list.
 - **Header nav styles are scoped to `#mainnav`** (there are two `<nav>` elements; bare `nav` selectors would leak into the mobile action bar).
 - **Copy style:** plain hyphens, never em dashes (U+2014); en dashes only in ranges. Grep before every push.
 
@@ -81,3 +84,4 @@ ai-search-optimization-checklist.md             Pitch documents (internal)
 ---
 
 Site design & build with [Claude Code](https://claude.com/claude-code).
+August 2026 redesign pass ("one evening at the Inn") with Qwen Code for Black Buoy.
