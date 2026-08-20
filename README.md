@@ -4,7 +4,7 @@ A single-page website for [The Governor's Inn](https://www.governorsinn.com/), a
 
 ## The site
 
-**`index.html`** is the production site. It's fully self-contained (one HTML file plus `photos/` and `fonts/`), no build step, no framework, no third-party requests at load time. Deploy by uploading `index.html`, `photos/`, `fonts/`, `favicon.svg`, `favicon-32.png`, `apple-touch-icon.png`, `robots.txt`, `sitemap.xml`, and `llms.txt` to any static host. Everything else in the repo is internal (audits, design comps, photo masters) and must not be deployed.
+**`index.html`** (home) and **`weddings.html`** (the dedicated weddings & events page) are the production site. Each page is fully self-contained (HTML with inlined CSS plus `photos/` and `fonts/`), no build step, no framework, no third-party requests at load time. The two pages share the same inlined stylesheet, so a style change in one should be mirrored in the other. Deploy by uploading `index.html`, `weddings.html`, `photos/`, `fonts/`, `favicon.svg`, `favicon-32.png`, `apple-touch-icon.png`, `robots.txt`, `sitemap.xml`, and `llms.txt` to any static host. Everything else in the repo is internal (audits, design comps, photo masters) and must not be deployed.
 
 ### Design
 
